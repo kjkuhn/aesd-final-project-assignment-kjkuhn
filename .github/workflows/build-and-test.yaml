@@ -15,23 +15,6 @@ jobs:
             #run: docker build -t final-project-build-container .
       #- name: Ensure write permissions
         #run: chmod -R 777 ${GITHUB_WORKSPACE}
-      name: build-and-test
-on: 
-  push:
-
-jobs:
-  all:
-    container: crops/yocto:ubuntu-24.04-base
-    runs-on: self-hosted
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          clean: false
-          submodules: 'recursive'
-            #- name: build docker
-            #run: docker build -t final-project-build-container .
-      #- name: Ensure write permissions
-        #run: chmod -R 777 ${GITHUB_WORKSPACE}  
       - name: Configure Git 
         run: | 
           git config --global user.email "action@github.com"
