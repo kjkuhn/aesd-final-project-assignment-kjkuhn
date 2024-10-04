@@ -1,0 +1,23 @@
+name: build-and-test
+on: 
+  push:
+
+jobs:
+  all:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          clean: false
+          submodules: 'recursive'
+      - name: build docker
+        run: docker build -t final-project-build-container .
+      - name: run build
+        run: |
+          docker run --rm \
+          -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} \
+          final-project-build-container \
+          --workdir=${GITHUB_WORKSPACE}\
+          ./build.sh
+
+
