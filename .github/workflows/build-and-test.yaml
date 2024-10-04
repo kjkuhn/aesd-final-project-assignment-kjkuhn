@@ -16,6 +16,7 @@ jobs:
         run: |
           docker run --rm \
           -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} \
+          -w ${GITHUB_WORKSPACE} \
           final-project-build-container \
           ./build.sh
 
