@@ -20,8 +20,8 @@ jobs:
           -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} \
           -w ${GITHUB_WORKSPACE} \
           crops/yocto:ubuntu-24.04-base \
-          bash -c "git config user.email 'action@github.com' && \
-                   git config user.name 'GitHub Actions' && \
+          bash -c "git config --global user.email 'action@github.com' && \
+                   git config --global user.name 'GitHub Actions' && \
                    ./build.sh"
 
 
