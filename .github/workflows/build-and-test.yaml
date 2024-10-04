@@ -17,7 +17,7 @@ jobs:
           docker run --rm \
           -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} \
           -w ${GITHUB_WORKSPACE} \
-          crops/yocto \
+          crops/yocto:ubuntu-24.04-base \
           ./build.sh
 
 
