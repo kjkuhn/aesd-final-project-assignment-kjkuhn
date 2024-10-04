@@ -10,3 +10,7 @@
 	path = meta-openembedded
 	url = https://git.openembedded.org/meta-openembedded
 	branch = kirkstone
+[submodule "meta-st-openstlinux"]
+	path = meta-st-openstlinux
+	url = https://github.com/STMicroelectronics/meta-st-openstlinux.git
+	branch = kirkstone
