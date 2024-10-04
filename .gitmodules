@@ -14,3 +14,7 @@
 	path = meta-st-openstlinux
 	url = https://github.com/STMicroelectronics/meta-st-openstlinux.git
 	branch = kirkstone
+[submodule "meta-qt5"]
+	path = meta-qt5
+	url = https://github.com/meta-qt5/meta-qt5.git
+	branch = kirkstone
