@@ -49,6 +49,7 @@ lines=(
     "ACCEPT_EULA_$MACHINE = \"1\""
     "LICENSE_FLAGS_ACCEPTED += \"commercial\""
     "DISTRO_FEATURES:append = \" systemd usrmerge pam\""
+    "DISTRO_FEATURES:append = \" x11\""
     "DISTRO_FEATURES_BACKFILL_CONSIDERED += \"sysvinit\""
     "VIRTUAL-RUNTIME_init_manager = \"systemd\""
     "VIRTUAL-RUNTIME_initscripts = \"systemd-compat-units\""
