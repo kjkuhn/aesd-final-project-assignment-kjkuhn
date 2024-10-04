@@ -17,7 +17,6 @@ jobs:
           docker run --rm \
           -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} \
           final-project-build-container \
-          --workdir=${GITHUB_WORKSPACE}\
           ./build.sh
 
 
