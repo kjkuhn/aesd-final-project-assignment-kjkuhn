@@ -12,8 +12,8 @@ jobs:
           submodules: 'recursive'
             #- name: build docker
             #run: docker build -t final-project-build-container .
-      - name: Ensure write permissions
-        run: chmod -R 777 ${GITHUB_WORKSPACE}
+      #- name: Ensure write permissions
+        #run: chmod -R 777 ${GITHUB_WORKSPACE}
       - name: run build
         run: |
           docker run --rm \
@@ -22,6 +22,7 @@ jobs:
           crops/yocto:ubuntu-24.04-base \
           bash -c "git config --global user.email 'action@github.com' && \
                    git config --global user.name 'GitHub Actions' && \
+                   chmod -R 777 ${GITHUB_WORKSPACE} \
                    ./build.sh"
 
 
