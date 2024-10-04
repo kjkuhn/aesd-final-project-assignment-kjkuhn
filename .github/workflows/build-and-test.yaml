@@ -10,14 +10,14 @@ jobs:
         with:
           clean: false
           submodules: 'recursive'
-      - name: build docker
-        run: docker build -t final-project-build-container .
+            #- name: build docker
+            #run: docker build -t final-project-build-container .
       - name: run build
         run: |
           docker run --rm \
           -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} \
           -w ${GITHUB_WORKSPACE} \
-          final-project-build-container \
+          crops/yocto \
           ./build.sh
 
 
