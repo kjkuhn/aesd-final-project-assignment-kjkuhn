@@ -4,7 +4,7 @@ on:
 
 jobs:
   all:
-    container: crops/yocto:ubuntu-24.04-base
+    #container: crops/yocto:ubuntu-24.04-base
     runs-on: self-hosted
     steps:
       - name: Checkout code
