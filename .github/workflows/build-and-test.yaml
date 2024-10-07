@@ -14,6 +14,7 @@ jobs:
       - name: build
         run: |
          docker run --rm \
+         --user $(id -u):$(id -g) \
          -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} \
          -w ${GITHUB_WORKSPACE} \
          crops/yocto:ubuntu-24.04-base \
