@@ -19,7 +19,6 @@ jobs:
          crops/yocto:ubuntu-24.04-base \
          bash -c "git config --global user.email 'action@github.com' && \
                   git config --global user.name 'GitHub Actions' && \
-                  chmod -R 777 ${GITHUB_WORKSPACE} \
                   ./build.sh"
 
 
