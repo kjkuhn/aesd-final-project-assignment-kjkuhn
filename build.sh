@@ -6,8 +6,10 @@ oe="$root/meta-openembedded"
 stm32mp="$root/meta-st-stm32mp"
 qt5="$root/meta-qt5"
 stlinux="$root/meta-st-openstlinux"
-MACHINE="stm32mp15-disco"
-oe_dependencies="meta-oe meta-python meta-networking meta-multimedia meta-gnome meta-webserver meta-filesystems meta-perl meta-xfce"
+#MACHINE="stm32mp15-disco"
+MACHINE="stm32mp1"
+#oe_dependencies="meta-oe meta-python meta-networking meta-multimedia meta-gnome meta-webserver meta-filesystems meta-perl meta-xfce"
+oe_dependencies="meta-oe meta-python meta-networking meta-multimedia meta-gnome meta-webserver meta-filesystems meta-perl"
 
 source $poky/oe-init-build-env
 
