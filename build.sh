@@ -48,12 +48,16 @@ echo "updating bitbake settings in conf/local.conf..
 lines=(
     "ACCEPT_EULA_$MACHINE = \"1\""
     "LICENSE_FLAGS_ACCEPTED += \"commercial\""
-    "DISTRO_FEATURES:append = \" systemd usrmerge pam\""
-    "DISTRO_FEATURES:append = \" x11\""
-    "DISTRO_FEATURES_BACKFILL_CONSIDERED += \"sysvinit\""
-    "VIRTUAL-RUNTIME_init_manager = \"systemd\""
-    "VIRTUAL-RUNTIME_initscripts = \"systemd-compat-units\""
+    #"DISTRO_FEATURES:append = \" systemd usrmerge pam\""
+    #"DISTRO_FEATURES:append = \" x11\""
+    #"DISTRO_FEATURES_BACKFILL_CONSIDERED += \"sysvinit\""
+    #"VIRTUAL-RUNTIME_init_manager = \"systemd\""
+    #"VIRTUAL-RUNTIME_initscripts = \"systemd-compat-units\""
     "MACHINE = \"$MACHINE\""
+    "DISTRO = \"openstlinux-weston\""
+    #"PACKAGECONFIG:append:pn-mesa-gl = \" gallium\""
+    #"GALLIUMDRIVERS:append:pn-mesa-gl = \" swrast\""
+    #"PACKAGECONFIG:append:pn-mesa-gl = \" egl\""
 )
 
 # Check and add each line
