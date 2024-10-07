@@ -15,10 +15,10 @@ jobs:
             #run: docker build -t final-project-build-container .
       #- name: Ensure write permissions
         #run: chmod -R 777 ${GITHUB_WORKSPACE}
-      - name: Configure Git 
-        run: | 
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Actions"
+      #- name: Configure Git 
+      #  run: | 
+      #    git config --global user.email "action@github.com"
+      #    git config --global user.name "GitHub Actions"
       - name: Run Build 
         run: ./build.sh
 
