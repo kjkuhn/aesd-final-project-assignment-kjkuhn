@@ -11,16 +11,22 @@ jobs:
         with:
           clean: false
           submodules: 'recursive'
-      - name: build
+      - name: Set up Docker
         run: |
-         docker run --rm \
-         --user $(id -u):$(id -g) \
-         -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} \
-         -w ${GITHUB_WORKSPACE} \
-         crops/yocto:ubuntu-24.04-base \
-         bash -c "git config --global user.email 'action@github.com' && \
-                  git config --global user.name 'GitHub Actions' && \
-                  ./build.sh"
+          docker build -t final-project-build-container .
+      - name: Run Build
+        run: |
+          docker run -it --rm -v ${GITHUB_WORKSPACE}:/workspace -w /workspace --user $(id -u):$(id -g) final-project-build-container:latest ./build.sh
+      # - name: build
+      #   run: |
+      #    docker run --rm \
+      #    --user $(id -u):$(id -g) \
+      #    -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} \
+      #    -w ${GITHUB_WORKSPACE} \
+      #    crops/yocto:ubuntu-24.04-base \
+      #    bash -c "git config --global user.email 'action@github.com' && \
+      #             git config --global user.name 'GitHub Actions' && \
+      #             ./build.sh"
 
 
       #- name: build docker
