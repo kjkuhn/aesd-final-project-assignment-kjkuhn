@@ -7,10 +7,29 @@ jobs:
     container: crops/yocto:ubuntu-24.04-base
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
         with:
           clean: false
           submodules: 'recursive'
+      - name: Run Build
+        run: |
+          docker run --rm \
+          --user $(id -u):$(id -g) \  # Run with host user's UID and GID
+          -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} \
+          -w ${GITHUB_WORKSPACE} \
+          crops/yocto:ubuntu-24.04-base \
+          bash -c "./build.sh"
+
+# jobs:
+#   all:
+#     container: crops/yocto:ubuntu-24.04-base
+#     runs-on: self-hosted
+#     steps:
+#       - uses: actions/checkout@v3
+#         with:
+#           clean: false
+#           submodules: 'recursive'
             #- name: build docker
             #run: docker build -t final-project-build-container .
       #- name: Ensure write permissions
@@ -19,8 +38,8 @@ jobs:
       #  run: | 
       #    git config --global user.email "action@github.com"
       #    git config --global user.name "GitHub Actions"
-      - name: Run Build 
-        run: ./build.sh
+      # - name: Run Build 
+      #   run: ./build.sh
 
         #run: |
         #  docker run --rm \
