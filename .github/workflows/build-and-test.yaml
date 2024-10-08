@@ -15,7 +15,7 @@ jobs:
         run: |
           docker build -t final-project-build-container .
       - name: Run Build
-       run: |
+        run: |
          docker run --rm -v ${GITHUB_WORKSPACE}:/workspace -w /workspace --user $(id -u):$(id -g) final-project-build-container:latest \
          ./build_ci.sh
           
