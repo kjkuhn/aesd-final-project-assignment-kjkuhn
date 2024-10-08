@@ -20,9 +20,9 @@ jobs:
       #    git config user.email "gh.runner@local.domain"
       - name: Run Build
         run: |
-          docker run --rm -v ${GITHUB_WORKSPACE}:/workspace -w /workspace final-project-build-container:latest \
+          docker run --rm -v ${GITHUB_WORKSPACE}:/workspace -w /workspace --user $(id -u):$(id -g) final-project-build-container:latest \
           ./build.sh
-
+          
       # - name: build
       #   run: |
       #    docker run --rm \

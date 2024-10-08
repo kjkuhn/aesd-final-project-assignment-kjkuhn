@@ -15,7 +15,6 @@ RUN apt update && \
 USER root
 RUN git config --global user.name "Github Runner" && \
     git config --global user.email "gh.runner@local.domain"
-USER $(id -u):$(id -g) 
 
 # Reset DEBIAN_FRONTEND to avoid affecting subsequent builds  
 ENV DEBIAN_FRONTEND=newt  
