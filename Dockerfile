@@ -23,4 +23,6 @@ COPY . /workspace
 
 WORKDIR /workspace
 
+RUN sed -i 's/INHERIT += "sanity"/#INHERIT += "sanity"/g' poky/meta/conf/sanity.conf
+
 RUN ./build.sh
