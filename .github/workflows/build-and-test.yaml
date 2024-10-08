@@ -14,14 +14,10 @@ jobs:
       - name: Set up Docker
         run: |
           docker build -t final-project-build-container .
-      #- name: Git Setup
-      #  run: |
-      #    git config user.name "Github Runner" && \
-      #    git config user.email "gh.runner@local.domain"
-      #- name: Run Build
-      #  run: |
-      #    docker run --rm -v ${GITHUB_WORKSPACE}:/workspace -w /workspace --user $(id -u):$(id -g) final-project-build-container:latest \
-      #    ./build.sh
+      - name: Run Build
+       run: |
+         docker run --rm -v ${GITHUB_WORKSPACE}:/workspace -w /workspace --user $(id -u):$(id -g) final-project-build-container:latest \
+         ./build_ci.sh
           
       # - name: build
       #   run: |
