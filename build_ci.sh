@@ -1,10 +1,18 @@
 #!/bin/bash
 
-git clone --recursive https://github.com/kjkuhn/aesd-final-project-assignment-kjkuhn.git
-cd aesd-final-project-assignment-kjkuhn
-git config user.name "Github Runner"
-git config user.email "gh.runner@local.domain"
+if [ ! -d "aesd-final-project-assignment-kjkuhn" ]; then
+    git clone --recursive https://github.com/kjkuhn/aesd-final-project-assignment-kjkuhn.git
+    cd aesd-final-project-assignment-kjkuhn
+else
+    cd aesd-final-project-assignment-kjkuhn
+    git pull
+fi
 
+git config --global user.name "Github Runner"
+git config --global user.email "gh.runner@local.domain"
+
+echo "git user name is $(git config user.name)"
+echo "git user email is $(git config user.email)"
 
 root="$(pwd)"
 poky="$root/poky"
