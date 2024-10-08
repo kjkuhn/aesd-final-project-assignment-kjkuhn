@@ -8,8 +8,8 @@ else
     git pull
 fi
 
-git config --global user.name "Github Runner"
-git config --global user.email "gh.runner@local.domain"
+# git config --global user.name "Github Runner"
+# git config --global user.email "gh.runner@local.domain"
 
 echo "git user name is $(git config user.name)"
 echo "git user email is $(git config user.email)"
