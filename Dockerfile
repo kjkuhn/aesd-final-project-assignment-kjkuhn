@@ -25,4 +25,6 @@ WORKDIR /workspace
 
 RUN sed -i 's/INHERIT += "sanity"/#INHERIT += "sanity"/g' poky/meta/conf/sanity.conf
 
+RUN git config --global --add safe.directory /workspace/build/downloads/git2/gitlab.freedesktop.org.pkg-config.pkg-config.git
+
 RUN ./build.sh
