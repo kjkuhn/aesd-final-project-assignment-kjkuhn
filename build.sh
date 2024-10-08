@@ -60,9 +60,9 @@ lines=(
     #"PACKAGECONFIG:append:pn-mesa-gl = \" gallium\""
     #"GALLIUMDRIVERS:append:pn-mesa-gl = \" swrast\""
     #"PACKAGECONFIG:append:pn-mesa-gl = \" egl\""
-    INHERIT += "sanity" 
-    WARN_ON_ROOT = "1"
-    ERROR_ON_ROOT = "0" 
+    "INHERIT += \"sanity\""
+    "WARN_ON_ROOT = \"1\""
+    "ERROR_ON_ROOT = \"0\"" 
 )
 
 # Check and add each line
